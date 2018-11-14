@@ -3,7 +3,7 @@ import express from 'express'
 import { logger, defValues } from '../../utils'
 import db from '../../models'
 
-import {limitScroll, defFieldUsu /*,defFieldAt, defField */ } from '../../utils'
+import {limitScroll, defFieldUsu } from '../../utils'
 
 const uuid = require('uuid/v4')
 
@@ -54,7 +54,7 @@ tareaRoutes.post('/masivo', async (req, res) => {
 		if (tarea) {
 			res.status(200).json({ data: tarea })
 		} else {
-			throw new Error('No se crearon las empresas especificada')
+			throw new Error('No se crearon las tareas especificada')
 		}
 
 	} catch (error) {

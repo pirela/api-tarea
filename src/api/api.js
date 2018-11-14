@@ -14,14 +14,6 @@ import db from '../models'
 const apiRoutes = express.Router()
 const Usuario = db.usuario
 
-
-mercadopago.configure({
-  sandbox: config.nodeEnv !== 'production',
-  access_token: config.mpAccessToken,
-  //client_id: '3166956035244429',
-  //client_secret: 'eKRhdmSGTve1ZvMFNvQ51kHq5a5i3xXR'
-})
-
 apiRoutes.get('/', (req, res) => {
   res.status(200).json({
     data: {

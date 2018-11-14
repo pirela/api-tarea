@@ -90,7 +90,7 @@ usuarioRoutes.put('/', async (req, res) => {
 		if (upd[0]) {
 			res.status(200).json({ data: data })
 		} else {
-			throw new Error('No se modifico la tarea especificado')
+			throw new Error('No se modifico el usuario especificado')
 		}
 
 	} catch (error) {
@@ -112,7 +112,7 @@ usuarioRoutes.delete('/:id', async (req, res) => {
     if(del) {
       res.status(200).json({ data: del })
     } else {
-      throw new Error('No se elimino la tarea especficida')
+      throw new Error('No se elimino el usuario especficida')
     }
 
   } catch (error) {

@@ -3,8 +3,7 @@ import express from 'express'
 import { logger, defValues } from '../../utils'
 import db from '../../models'
 
-import {limitScroll, defFieldUsu /*,defFieldAt, defField */ } from '../../utils'
-// const constants = require('../../utils/constants')
+import {limitScroll, defFieldUsu } from '../../utils'
 
 const Model = db.tiempo
 const tareaRoutes = express.Router()
@@ -32,7 +31,7 @@ tareaRoutes.post('/', async (req, res) => {
 tareaRoutes.get('/', async (req, res) => {
   const data = req.body
   const def = defValues()
-  const values =  {...data, ...def, disponible: true}
+  const values =  {...data, ...def}
 
   try {
     let data = await Model.findAll({})
@@ -40,7 +39,7 @@ tareaRoutes.get('/', async (req, res) => {
     if (data) {
       res.status(200).json({ data: data })
     } else {
-      throw new Error('No se creo el profesional')
+      throw new Error('No se creo el tiempo')
     }
   } catch (error) {
     logger.error(error.message)
