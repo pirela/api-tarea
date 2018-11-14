@@ -1,0 +1,25 @@
+# Env
+.env
+.env.production
+
+# Logs
+logs
+*.log
+npm-debug.log*
+
+# Compiled binary addons
+build/Release
+dist
+sessions.json
+
+# Dependency directories
+node_modules
+
+# Optional npm cache directory
+.npm
+
+#webstorm config
+.idea
+
+#vs code config
+.vscode
