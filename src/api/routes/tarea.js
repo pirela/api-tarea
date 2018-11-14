@@ -12,9 +12,11 @@ const tareaRoutes = express.Router()
 
 tareaRoutes.post('/', async (req, res) => {
 
+  const user = req.user
+
   const data = req.body
   const def = defValues()
-  const obj = {...data, ...def}
+  const obj = {...data, ...def, createdUsu: user.id, updatedUsu: user.id}
 
   try {
     let data = await Model.create(obj)

@@ -3,7 +3,7 @@ import jwt from 'jsonwebtoken'
 
 import config from '../config'
 import  db from '../models'
-import { logger, defValues } from '../utils'
+import { logger } from '../utils'
 
 const authRoutes = express.Router()
 const Model = db.usuario
